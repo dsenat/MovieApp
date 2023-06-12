@@ -4,7 +4,7 @@ import {fetchTrendingMovies, searchMovies, fetchMovieTrailer } from './Component
 function App() {
   const apiKey = "70dc011a61f22addf07359f0c74e48b5";
   const [movies, setMovies] = useState([]);
-  const [searchQuery, setSearchQuery] = useState('');
+  const [search, setSearch] = useState('');
 
   useEffect(() => {
     const fetchMovies = async () => {
@@ -23,7 +23,7 @@ function App() {
     <div>
       <h1>Movies</h1>
       <form onSubmit={handleSearch}>
-        <input type="text" value={searchQuery} onChange={(e) => setSearchQuery(e.target.value)} placeholder="Search Movies" />
+        <input type="text" value={search} onChange={(e) => setSearch(e.target.value)} placeholder="Search Movies" />
         <button type="submit">Search</button>
       </form>
     </div>

@@ -5,11 +5,12 @@ const Home = () => {
   const [movies, setMovies] = useState([]);
 }
 
-useEffect(() =>{
-  fetchTrendingMovies()
-  .then(trendingMovies => {
-    setMovies(trendingMovies);
-  })
+useEffect(() => {
+  const fetchMovies = async () => {
+    const trendingMovies = await fetchTrendingMovies(
+      setMovies(trendingMovies)
+    )
+  }
 })
 
 const fetchMovieTrailer = (movieId) => {
